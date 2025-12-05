@@ -1,0 +1,12 @@
+* {
+  background-color: #002261;
+}
+.App {
+  color: white;
+  /* background-color: black; */
+  box-sizing: border-box;
+  width: 100vw;
+  height: 80vh;
+  font-family: sans-serif;
+  text-align: center;
+}
