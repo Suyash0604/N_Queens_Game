@@ -68,14 +68,27 @@ export default function Grid({ n }) {
     toggle(row, col);
   };
 
+  const hexToRgba = (hex, alpha) => {
+    const r = parseInt(hex.slice(1, 3), 16);
+    const g = parseInt(hex.slice(3, 5), 16);
+    const b = parseInt(hex.slice(5, 7), 16);
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+  };
+
   const getCellStyle = (row, col) => {
     let backgroundColor = puzzleColors[row][col];
     
+    // Add opacity to base colors for modern look on dark background
+    if (text[row][col] !== "Q" && text[row][col] !== "x") {
+      // Use optimal opacity for vibrant modern colors on dark theme
+      backgroundColor = hexToRgba(backgroundColor, 0.35);
+    }
+    
     // Override colors based on state
     if (text[row][col] === "Q") {
-      backgroundColor = "rgba(240, 136, 62, 0.3)"; // queen color with transparency
+      backgroundColor = "rgba(251, 191, 36, 0.7)"; // Amber/Gold for queens
     } else if (text[row][col] === "x") {
-      backgroundColor = "rgba(248, 81, 73, 0.2)"; // attacked color with transparency
+      backgroundColor = "rgba(239, 68, 68, 0.25)"; // Red for attacked cells
     }
     
     return { backgroundColor };

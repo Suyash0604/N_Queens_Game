@@ -64,11 +64,29 @@ export default function generatePuzzle(N) {
   }
 
   // ----------------------------------------------------------
-  // 3. Assign CSS Colors
+  // 3. Modern Design System Colors
   // ----------------------------------------------------------
   const cssColors = [
-    "red", "green", "blue", "purple", "orange", "pink", "yellow",
-    "brown", "gray", "cyan", "magenta", "teal", "olive", "navy"
+    "#8b5cf6", // Purple 500
+    "#06b6d4", // Cyan 500
+    "#10b981", // Emerald 500
+    "#f59e0b", // Amber 500
+    "#ef4444", // Red 500
+    "#3b82f6", // Blue 500
+    "#ec4899", // Pink 500
+    "#14b8a6", // Teal 500
+    "#f97316", // Orange 500
+    "#6366f1", // Indigo 500
+    "#84cc16", // Lime 500
+    "#22d3ee", // Sky 500
+    "#a855f7", // Purple 400
+    "#fb7185", // Rose 400
+    "#34d399", // Emerald 400
+    "#60a5fa", // Blue 400
+    "#fbbf24", // Amber 400
+    "#818cf8", // Indigo 400
+    "#2dd4bf", // Teal 400
+    "#f472b6"  // Pink 400
   ];
 
   function idToColor(id) {
